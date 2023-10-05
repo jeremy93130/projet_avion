@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Utilisateurclass.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/volClass.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Reserveclass.php');
 
 
 if (isset($_POST['inscription'])) {
@@ -43,6 +44,17 @@ if (isset($_POST["ajouter_vol"])) {
     $date_arrivee = htmlspecialchars($_POST["date_arrivee"]);
     $ville_depart = htmlspecialchars($_POST["ville_dep"]);
     $ville_arrivee = htmlspecialchars($_POST["ville_arr"]);
+    $capacite = htmlspecialchars($_POST["capacite"]);
 
-    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee);
+    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee, $capacite);
+}
+
+if (isset($_POST["reserver"])) {
+    $voyageur = htmlspecialchars($_POST["id_utilisateur"]);
+    $id_vol = htmlspecialchars($_POST["departs"]);
+    $passagers = htmlspecialchars($_POST["nb_passager"]);
+    $siege = htmlspecialchars($_POST["siege"]);
+    $depart = htmlspecialchars($_POST["depart_date"]);
+
+    Reservation::reservation($id_vol,$voyageur,$passagers,$siege,$depart);    
 }

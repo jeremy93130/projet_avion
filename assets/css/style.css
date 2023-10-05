@@ -13,11 +13,16 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 input,label{
     width: 200px;
     margin: 15px auto;
+}
+
+h3 {
+    text-align: center;
 }
 
 

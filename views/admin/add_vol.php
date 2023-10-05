@@ -21,6 +21,10 @@
                 <label for="ville_arrivee">Ville d'arrivée :</label>
                 <input type="text" name="ville_arr">
             </div>
+            <div>
+            <label for="capacite">Capacité</label>
+            <input type="number" name="capacite">
+        </div>
             <input type="submit" name="ajouter_vol" value="Ajouter le vol">
         </form>
     </div>

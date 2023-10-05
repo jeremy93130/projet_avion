@@ -15,14 +15,29 @@ $listVol = Vols::listVols();
         <th>Ville de Départ </th>
         <th>Ville d'arrivée</th>
     </tr>
-    <tr>
-        <?php foreach ($listVol as $vol) { ?>
-            <td><?= $vol["date_depart"] ?></td>
-            <td><?= $vol["heure_depart"] ?></td>
-            <td><?= $vol["date_arrivee"] ?></td>
-            <td><?= $vol["heure_arrivee"] ?></td>
-            <td><?= $vol["ville_depart"] ?></td>
-            <td><?= $vol["ville_arrivee"] ?></td>
-        <?php } ?>
+    <?php foreach ($listVol as $vol) {
+        if ($vol["disponibilite"] == "disponible") {
+            ?>
+            <tr>
+                <td>
+                    <?= $vol["date_depart"] ?>
+                </td>
+                <td>
+                    <?= $vol["heure_depart"] ?>
+                </td>
+                <td>
+                    <?= $vol["date_arrivee"] ?>
+                </td>
+                <td>
+                    <?= $vol["heure_arrivee"] ?>
+                </td>
+                <td>
+                    <?= $vol["ville_depart"] ?>
+                </td>
+                <td>
+                    <?= $vol["ville_arrivee"] ?>
+                </td>
+            <?php }
+    } ?>
     </tr>
 </table>
