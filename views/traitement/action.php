@@ -33,7 +33,6 @@ if (isset($_POST['connexion'])) {
     if (empty($email) || empty($mdp)) {
         $_SESSION["erreur_vide"] = "Tous les champs doivent être remplis";
     }
-
 }
 
 
@@ -45,8 +44,9 @@ if (isset($_POST["ajouter_vol"])) {
     $ville_depart = htmlspecialchars($_POST["ville_dep"]);
     $ville_arrivee = htmlspecialchars($_POST["ville_arr"]);
     $capacite = htmlspecialchars($_POST["capacite"]);
+    $nom_compagnie = htmlspecialchars($_POST["compagnie"]);
 
-    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee, $capacite);
+    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee, $capacite, $nom_compagnie);
 }
 
 if (isset($_POST["reserver"])) {
@@ -56,5 +56,5 @@ if (isset($_POST["reserver"])) {
     $siege = htmlspecialchars($_POST["siege"]);
     $depart = htmlspecialchars($_POST["depart_date"]);
 
-    Reservation::reservation($id_vol,$voyageur,$passagers,$siege,$depart);    
+    Reservation::reservation($id_vol, $voyageur, $passagers, $siege, $depart);
 }

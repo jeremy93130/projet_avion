@@ -22,12 +22,13 @@
                 <input type="text" name="ville_arr">
             </div>
             <div>
-            <label for="capacite">Capacité</label>
-            <input type="number" name="capacite">
-            <label for="prix">Prix</label>
-            <input type="number" name="prix">
-
-        </div>
+                <label for="capacite">Capacité</label>
+                <input type="number" name="capacite">
+                <label for="prix">Prix de base</label>
+                <input type="number" name="prix" placeholder="Prix €">
+                <label for="prix">Compagnie aérienne</label>
+                <input type="text" name="compagnie">
+            </div>
             <input type="submit" name="ajouter_vol" value="Ajouter le vol">
         </form>
     </div>

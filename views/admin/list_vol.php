@@ -1,7 +1,9 @@
 <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Compagnieclass.php');
 require_once("../inc/header.php");
 $listVol = Vols::listVols();
+$listCompagnie = Compagnie::compagnie();
 ?>
 
 
@@ -14,10 +16,11 @@ $listVol = Vols::listVols();
         <th> Heure d'arrivée </th>
         <th>Ville de Départ </th>
         <th>Ville d'arrivée</th>
+        <th>Compagnie Aérienne</th>
     </tr>
     <?php foreach ($listVol as $vol) {
         if ($vol["disponibilite"] == "disponible") {
-            ?>
+    ?>
             <tr>
                 <td>
                     <?= $vol["date_depart"] ?>
@@ -37,7 +40,10 @@ $listVol = Vols::listVols();
                 <td>
                     <?= $vol["ville_arrivee"] ?>
                 </td>
-            <?php }
+                <?php }
     } ?>
+    <?php foreach($listCompagnie as $compagnie){ ?>
+        <td><?= $compagnie["nom"] ?></td>
     </tr>
+    <?php } ?>
 </table>
