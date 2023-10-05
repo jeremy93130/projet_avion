@@ -56,5 +56,5 @@ if (isset($_POST["reserver"])) {
     $siege = htmlspecialchars($_POST["siege"]);
     $depart = htmlspecialchars($_POST["depart_date"]);
 
-    Reservation::reservation($id_vol, $voyageur, $passagers, $siege, $depart);
+    Reservation::reservation($id_vol, $voyageur, $passagers, $siege);
 }
