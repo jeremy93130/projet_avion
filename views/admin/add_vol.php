@@ -24,6 +24,9 @@
             <div>
             <label for="capacite">Capacité</label>
             <input type="number" name="capacite">
+            <label for="prix">Prix</label>
+            <input type="number" name="prix">
+
         </div>
             <input type="submit" name="ajouter_vol" value="Ajouter le vol">
         </form>

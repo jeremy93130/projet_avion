@@ -17,7 +17,7 @@ $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : nul
             <h3>Liste des vols disponibles</h3>
             <select name="departs" id="vol_depart">
                 <?php foreach ($dispoVol as $vol) { ?>
-                    <option value="<?= $vol["id_vol"] ?>">
+                    <option value="<?= $vol["id_vol"]; ?>" id="<?= $vol["prix"] ?>">
                         <?= $vol["ville_depart"] . "/" . $vol["ville_arrivee"];
                         ?>
                     </option>
@@ -33,9 +33,6 @@ $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : nul
         <div>
             <label for="date">Date de départ</label>
             <input type="date" name="depart_date">
-        </div>
-        <div>
-            <input type="text" disabled>
         </div>
         <input type="submit" name="reserver" value="Reserver">
     </form>
