@@ -15,9 +15,9 @@ $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : nul
         </div>
         <div>
             <h3>Liste des vols disponibles</h3>
-            <select name="departs" id="vol_depart">
+            <select name="departs" id="vol_depart" onchange="prix()">
                 <?php foreach ($dispoVol as $vol) { ?>
-                    <option value="<?= $vol["id_vol"]; ?>" id="<?= $vol["prix"] ?>">
+                    <option value="<?= $vol["id_vol"]; ?>" id="<?= $vol["prix"]; ?>" >
                         <?= $vol["ville_depart"] . "/" . $vol["ville_arrivee"];
                         ?>
                     </option>
@@ -26,7 +26,7 @@ $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : nul
         </div>
         <div>
             <label for="passagers">Nombre de passagers</label>
-            <input type="number" name="nb_passager">
+            <input type="number" name="nb_passager" id="nb_person">
             <label for="passagers">Choix du siège</label>
             <input type="number" name="siege">
         </div>
@@ -34,7 +34,9 @@ $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : nul
             <label for="date">Date de départ</label>
             <input type="date" name="depart_date">
         </div>
+        <div id="price"></div>
         <input type="submit" name="reserver" value="Reserver">
     </form>
 </section>
-<script src="../assets/js/structure.js"></script>
+<script src="../assets/js/structure.js">
+</script>
