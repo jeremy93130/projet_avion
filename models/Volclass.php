@@ -20,6 +20,8 @@ class Vols
             $request1 = $db->prepare("INSERT INTO compagnies (nom) VALUES (?)");
             try{
                 $request1->execute(array($nom_compagnie));
+                
+                // $request1 = $db->prepare("INSERT INTO sieges (")
             }catch(PDOException $e){
                 echo $e->getMessage();
             }

@@ -53,8 +53,7 @@ if (isset($_POST["reserver"])) {
     $voyageur = htmlspecialchars($_POST["id_utilisateur"]);
     $id_vol = htmlspecialchars($_POST["departs"]);
     $passagers = htmlspecialchars($_POST["nb_passager"]);
-    $siege = htmlspecialchars($_POST["siege"]);
-    $depart = htmlspecialchars($_POST["depart_date"]);
+    $siege = htmlspecialchars($_POST["choix"]);
 
     Reservation::reservation($id_vol,$voyageur,$passagers,$siege);   
 }
