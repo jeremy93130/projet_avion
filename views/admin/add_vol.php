@@ -5,7 +5,7 @@
         <form action="../traitement/action.php" method='post'>
             <div>
                 <label for="d_depart">Date de départ :</label>
-                <input type="date" name="date_depart">
+                <input type="date" name="date_depart" min="<?= date("D-m-y") ?>">
                 <label for="d_arrivee">Date d'arrivée :</label>
                 <input type="date" name="date_arrivee">
             </div>
@@ -26,13 +26,13 @@
                 <input type="number" name="capacite">
                 <label for="prix">Prix de base</label>
                 <input type="number" name="prix" placeholder="Prix €">
-                <label for="prix">Compagnie aérienne</label>
+                <label for="compagnie">Compagnie aérienne</label>
                 <input type="text" name="compagnie">
             </div>
             <input type="submit" name="ajouter_vol" value="Ajouter le vol">
         </form>
     </div>
-    <div>
-    </div>
+    <div></div>
 </section>
 <?php include_once('../inc/footer.php'); ?>
+

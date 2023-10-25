@@ -45,8 +45,9 @@ if (isset($_POST["ajouter_vol"])) {
     $ville_arrivee = htmlspecialchars($_POST["ville_arr"]);
     $capacite = htmlspecialchars($_POST["capacite"]);
     $nom_compagnie = htmlspecialchars($_POST["compagnie"]);
+    $prix = htmlspecialchars($_POST["prix"]);
 
-    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee, $capacite, $nom_compagnie);
+    Vols::avions($heure_depart, $heure_arrivee, $date_depart, $date_arrivee, $ville_depart, $ville_arrivee, $capacite, $prix, $nom_compagnie);
 }
 
 if (isset($_POST["reserver"])) {
@@ -55,5 +56,7 @@ if (isset($_POST["reserver"])) {
     $passagers = htmlspecialchars($_POST["nb_passager"]);
     $siege = htmlspecialchars($_POST["choix"]);
 
-    Reservation::reservation($id_vol,$voyageur,$passagers,$siege);   
+    Reservation::reservation($id_vol, $voyageur, $passagers, $siege);
 }
+
+

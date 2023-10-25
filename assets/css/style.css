@@ -16,7 +16,8 @@ form {
     flex-wrap: wrap;
 }
 
-input,label{
+input,
+label {
     width: 200px;
     margin: 15px auto;
 }
@@ -109,18 +110,22 @@ section {
     margin: auto;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-.listvol th, .listvol td {
-    padding:  0 10px;
+.listvol th,
+.listvol td {
+    padding: 0 10px;
     text-align: center;
 }
 
 
 /* Partie Reservation.php */
 
-.container-reservation {
-    
+
+/* Partie reservation_list.php */
+
+.red_depart {
+    color: red;
 }

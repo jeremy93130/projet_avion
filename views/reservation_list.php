@@ -3,44 +3,67 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Reserveclass.php');
 $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : null;
 $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
-var_dump($listReservation);
+// var_dump($listReservation);
 ?>
 
 
 <h2>Liste des vols passés et/ou à venir</h2>
 <table class="listvol">
     <tr>
-        <th>Date de Départ </th>
-        <th>Heure de départ </th>
-        <th>Date d'arrivée </th>
-        <th> Heure d'arrivée </th>
-        <th>Ville de Départ </th>
-        <th>Ville d'arrivée</th>
-        <th>Compagnie Aérienne</th>
+        <th>Nom/Prénom
+        </th>
+        <th>Date de départ
+        </th>
+        <th>Heure de départ
+        </th>
+        <th>Date d'arrivée
+        </th>
+        <th>
+            Heure d'arrivée
+        </th>
+        <th>Siege reservé
+        </th>
     </tr>
 
-    <tr>
-            <td>
-                <?= $listReservation["id_reservations"] ?>
-            </td>
-            <td>
-                <?= $listReservation["vol_id"] ?>
-            </td>
-            <td>
-                <?= $listReservation["id_reservations"] ?>
-            </td>
-            <td>
-                <?= $listReservation["id_reservations"] ?>
-            </td>
-            <td>
+    <?php foreach ($listReservation as $reservation) { ?>
 
-            </td>
-            <td>
+            <?php if ($reservation["date_depart"] < date("Y-m-d")) { ?>
+                    <tr class="red_depart">
+                        <td>
+                            <?= $reservation["nom"]; ?>
+                            <?= $reservation["prenom"]; ?>
+                        </td>
+                        <td>
+                            <?= $reservation["date_depart"]; ?>
+                        </td>
+                        <td><?= $reservation['heure_depart'] ?>
+                        </td>
+                        <td><?= $reservation['date_arrivee'] ?></td>
+                        <td><?= $reservation['heure_arrivee'] ?></td>
+                        <td><?= $reservation['numero_siege'] ?></td>
+                    </tr>
+                    <?php } else { ?>
+                    <tr>
+                        <td>
+                            <?= $reservation["nom"]; ?>
+                            <?= $reservation["prenom"]; ?>
+                        </td>
+                        <td>
+                            <?= $reservation["date_depart"]; ?>
+                        </td>
+                        <td><?= $reservation['heure_depart'] ?>
+                    </td>
+                        <td><?= $reservation['date_arrivee'] ?></td>
+                        <td><?= $reservation['heure_arrivee'] ?></td>
+                        <td><?= $reservation['numero_siege'] ?></td>
 
-            </td>
-</table>
+
+                        <td></td>
+                    </tr>
+            <?php }
+    } ?>
+    </table>
 
 
+    <?php require_once("../views/inc/footer.php"); ?>
 
-
-<?php require_once("../views/inc/footer.php"); ?>

@@ -13,7 +13,7 @@ class Utilisateur
         // execution 
         try {
             $request->execute(array($civilite, $nom, $prenom, $mail, $mdp, $naissance, $adresse, $ville, $codePostal));
-            header('Location: http://localhost/projet_avion/connexion.php');
+            header('Location: http://localhost/projet_avion/views/connexion.php');
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

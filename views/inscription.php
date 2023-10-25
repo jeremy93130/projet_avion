@@ -16,7 +16,7 @@
                     <input type="text" name="nom">
                 </div>
                 <div>
-                    <label for="prenom">prenom :</label>
+                    <label for="prenom">Prenom :</label>
                     <input name='prenom' type="text">
                 </div>
                 <div>

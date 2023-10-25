@@ -21,6 +21,7 @@ class Reservation
                 $request = $db->prepare("UPDATE sieges SET disponible = 'reservé' WHERE id_siege = ?");
                 try {
                     $request->execute(array($choix_siege));
+                    header("Location: http://localhost/projet_avion/views/reservation_list.php");
                 } catch (PDOException $e) {
                     $e->getMessage();
                 }
@@ -38,11 +39,11 @@ class Reservation
     {
         $db = Database::dbConnect();
 
-        $request = $db->prepare("SELECT * FROM reservations WHERE utilisateur_id = ?");
+        $request = $db->prepare("SELECT * FROM reservations JOIN vols ON reservations.vol_id = vols.id_vol JOIN utilisateurs ON reservations.utilisateur_id = utilisateurs.id_utilisateur JOIN sieges ON reservations.siege_id = sieges.id_siege WHERE utilisateurs.id_utilisateur = ?");
 
         try {
             $request->execute(array($id_utilisateur));
-            $reservation = $request->fetch();
+            $reservation = $request->fetchAll();
             return $reservation;
         } catch (PDOException $e) {
             $e->getMessage();
