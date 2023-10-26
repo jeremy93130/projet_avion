@@ -102,6 +102,34 @@ section {
     padding: 30px 0;
 }
 
+.formuInscription {
+    width: 600px;
+}
+
+.formuInscription div div {
+    width: 100%;
+    display: flex;
+}
+
+.formuInscription div .radio {
+    width: 40px;
+}
+
+.formuInscription div div label:not(:first-child),
+.formuInscription div div input {
+    width: 200px;
+}
+
+/* Inscription/Connexion boutons */
+.connect {
+    padding: 3px 6px;
+    color: rgba(255, 255, 255, 0.432);
+    font-size: 22px;
+    border: 2px solid rgba(255, 0, 0, 0.425);
+    background-color: rgba(0, 0, 0, 0.384);
+    text-decoration: none;
+}
+
 
 /* Page list_vol.php */
 

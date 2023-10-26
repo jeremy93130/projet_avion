@@ -1,7 +1,7 @@
 <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Compagnieclass.php');
-require_once("../inc/header.php");
+require_once("../../public/header.php");
 $listVol = Vols::listVols();
 $listCompagnie = Compagnie::compagnie();
 ?>

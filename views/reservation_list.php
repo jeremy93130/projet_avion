@@ -1,9 +1,9 @@
-<?php require_once('../views/inc/header.php');
+<?php require_once('../public/header.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Reserveclass.php');
 $id_utilisateur = isset($_GET["id_utilisateur"]) ? $_GET["id_utilisateur"] : null;
 $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
-// var_dump($listReservation);
+var_dump($listReservation);
 ?>
 
 
@@ -23,6 +23,10 @@ $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
         </th>
         <th>Siege reservé
         </th>
+        <th>Départ de 
+        </th>
+        <th>Arrivée à  
+        </th>
     </tr>
 
     <?php foreach ($listReservation as $reservation) { ?>
@@ -41,6 +45,8 @@ $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
                         <td><?= $reservation['date_arrivee'] ?></td>
                         <td><?= $reservation['heure_arrivee'] ?></td>
                         <td><?= $reservation['numero_siege'] ?></td>
+                        <td><?= $reservation['ville_depart'] ?></td>
+                        <td><?= $reservation['ville_arrivee'] ?></td>
                     </tr>
                     <?php } else { ?>
                     <tr>
@@ -56,6 +62,8 @@ $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
                         <td><?= $reservation['date_arrivee'] ?></td>
                         <td><?= $reservation['heure_arrivee'] ?></td>
                         <td><?= $reservation['numero_siege'] ?></td>
+                        <td><?= $reservation['ville_depart'] ?></td>
+                        <td><?= $reservation['ville_arrivee'] ?></td>
 
 
                         <td></td>
@@ -65,5 +73,5 @@ $listReservation = Reservation::reservationUtilisateur($id_utilisateur);
     </table>
 
 
-    <?php require_once("../views/inc/footer.php"); ?>
+    <?php require_once("../public/footer.php"); ?>
 

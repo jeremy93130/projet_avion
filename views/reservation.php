@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <?php
-require_once('./inc/header.php');
+require_once('../public/header.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Volclass.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/projet_avion/models/Reserveclass.php');
 $dispoVol = Vols::listVols();
@@ -59,5 +59,5 @@ $listSieges = Reservation::choixSieges();
         </div>
     </form>
 </section>
-<script src="../assets/js/structure.js">
+<script src="../public/assets/js/structure.js">
 </script>

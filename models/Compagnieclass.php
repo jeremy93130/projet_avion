@@ -16,4 +16,18 @@ class Compagnie
             $e->getMessage();
         }
     }
+
+    public static function addCompagnie($nom)
+    {
+        $db = Database::dbConnect();
+
+        $request = $db->prepare("INSERT INTO compagnies (nom) VALUES (?)");
+
+        try {
+            $request->execute(array($nom));
+            header("Location: http://localhost/projet_avion/views/admin/add_vol.php");
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 }

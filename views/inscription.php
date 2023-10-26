@@ -1,14 +1,18 @@
 <link rel="stylesheet" href="../assets/css/style.css">
-<?php include_once('./inc/header.php'); ?>
+<?php include_once('../public/header.php'); ?>
 <section>
     <div>
-        <form action="./traitement/action.php" method='post'>
-            <div>
+        <form action="./traitement/action.php" method='post' class="formuInscription">
+            <div class="civility">
                 <label for="civility">Civilité :</label>
-                <input type="radio" value="Mme" name="genre">
-                <label for="Mme">Mme</label>
-                <input type="radio" value="Mr" name="genre">
-                <label for="Mr">Mr</label>
+                <div>
+                    <input type="radio" value="Mme" name="genre" class="radio">
+                    <label for="Mme">Mme</label>
+                </div>
+                <div>
+                    <input type="radio" value="Mr" name="genre" class="radio">
+                    <label for="Mr">Mr</label>
+                </div>
             </div>
             <div class="nomprenom">
                 <div>
@@ -49,7 +53,6 @@
             <input type="submit" name="inscription">
         </form>
     </div>
-    <div>
-    </div>
+    <div></div>
 </section>
-<?php include_once('./inc/footer.php'); ?>
+<?php include_once('../public/footer.php'); ?>

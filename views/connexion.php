@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/style.css">
-<?php include_once('./inc/header.php'); ?>
+<?php include_once('../public/header.php'); ?>
 <section>
     <div>
         <form action="./traitement/action.php" method='post' id="formulaireCo">
@@ -27,4 +27,4 @@
     </div>
 </section>
 <script src="../assets/js/structure.js"></script>
-<?php include_once('./inc/footer.php'); ?>
+<?php include_once('../public/footer.php'); ?>

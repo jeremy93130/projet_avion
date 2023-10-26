@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/projet_avion/assets/css/style.css">
+    <link rel="stylesheet" href="http://localhost/projet_avion/public/assets/css/style.css">
     <title></title>
 </head>
 
@@ -16,7 +16,7 @@
         <nav>
             <ul class="logoPrenom">
                 <a href="http://localhost/projet_avion/index.php"><img
-                        src="../../../projet_avion/assets/img/avion_logo.svg" alt="Logo avion"></a>
+                        src="../../../projet_avion/public/assets/img/avion_logo.svg" alt="Logo avion"></a>
                 <li>
                     <?php if (isset($_SESSION['prenom'])) {
                         echo "Ravis de vous revoir " . $_SESSION['prenom'];
@@ -26,10 +26,10 @@
             </ul>
             <ul>
                 <?php if (isset($_SESSION['prenom'])) { ?>
-                    <li><a href="http://localhost/projet_avion/views/deconnexion.php">Se déconnecter</a></li>
+                    <li><a href="http://localhost/projet_avion/views/deconnexion.php" class="connect">Se déconnecter</a></li>
                 <?php } else { ?>
-                    <li><a href="http://localhost/projet_avion/views/connexion.php">Se connecter</a></li>
-                    <li><a href="http://localhost/projet_avion/views/inscription.php">S'inscrire</a></li>
+                    <li><a href="http://localhost/projet_avion/views/connexion.php" class="connect">Se connecter</a></li>
+                    <li><a href="http://localhost/projet_avion/views/inscription.php" class="connect">S'inscrire</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -50,6 +50,7 @@
                 <?php } ?>
                 <?php if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") { ?>
                     <li><a href="http://localhost/projet_avion/views/admin/add_vol.php">Ajouter un vol</a></li>
+                    <li><a href="http://localhost/projet_avion/views/admin/add_compagnie.php">Ajouter une compagnie</a></li>
                     <li><a href="http://localhost/projet_avion/views/admin/list_vol.php">Liste des vols</a></li>
                 <?php } ?>
             </ul>
