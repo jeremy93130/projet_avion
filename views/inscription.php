@@ -2,6 +2,10 @@
 <?php include_once('../public/header.php'); ?>
 <section>
     <div>
+        <?php if (isset($_SESSION["erreur_voyageur"])) { ?>
+                <h3><?= $_SESSION["erreur_voyageur"] ?></h3>
+        <?php }
+        unset($_SESSION["erreur_voyageur"]) ?>
         <form action="./traitement/action.php" method='post' class="formuInscription">
             <div class="civility">
                 <label for="civility">Civilité :</label>
@@ -56,3 +60,4 @@
     <div></div>
 </section>
 <?php include_once('../public/footer.php'); ?>
+

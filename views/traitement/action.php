@@ -66,3 +66,19 @@ if (isset($_POST["ajouter_compagnie"])) {
     Compagnie::addCompagnie($compagnie);
 }
 
+
+// Ajour voyageur 
+
+if (isset($_POST['add_voyageur'])) {
+    $civilite = htmlspecialchars($_POST['civilite_voyageur']);
+    $nom = htmlspecialchars($_POST['voyageur_nom']);
+    $prenom = htmlspecialchars($_POST['voyageur_prenom']);
+    $email = htmlspecialchars($_POST['voyageur_email']);
+    $date_naissance = htmlspecialchars($_POST['voyageur_naissance']);
+    $adresse = htmlspecialchars($_POST['voyageur_adresse']);
+    $postal = htmlspecialchars($_POST['voyageur_postal']);
+    $ville = htmlspecialchars($_POST['voyageur_ville']);
+
+    Utilisateur::ajoutVoyageur($civilite, $nom, $prenom, $email, $date_naissance, $adresse, $postal, $ville);
+}
+
